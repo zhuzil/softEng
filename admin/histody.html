@@ -1,0 +1,205 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-12-19 19:52:30
+ * @LastEditTime: 2022-12-19 20:40:55
+ * @LastEditors: DESKTOP-2OD8ACM
+ * @Description: In User Settings Edit
+ * @FilePath: \zhuzil.github.io\admin\histody.html
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../css/admin.css">
+		<title>信息管理系统</title>
+	</head>
+	<body>
+		<div class="head">
+			<div class="head-left">
+				<img src="../images/logo.jpg" height="70px">
+			</div>
+			<div class="head-right">
+				<div class="head-right-top">
+					<ul>
+						<li class="tuichu" onclick=logout()>退出</li>
+						<li><img src="../images/tuichu.svg"></li>
+						<li>欢迎使用二次压降检测仪检定系统!</li>
+						<li><img src="../images/huanying.svg"></li>					
+					</ul>
+				</div>
+				<div class="head-right-bottom">
+					<ul>
+						<li><a href="./connect.html"><img src="../images/jianding.svg"><p>开始检定</p></li></a>
+						<li><a href="./print_report.html"><img src="../images/dayin.svg"><p>打印报告</p></li></a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="content-left">
+            <div class="left_1">
+				<a href="../admin.html"><img src="../images/shouye.svg">
+				<p>首页</p></a>
+			</div>
+			<div class="left_1">
+				<a href="./dataanalysis.html"><img src="../images/shujufenxi.svg">
+				<p>数据分析</p></a>
+			</div>
+			<div class="left_1"  style="background-color: gray;">
+				<a href="./histody.html"><img src="../images/lishishuju.svg">
+				<p>历史数据</p></a>
+			</div>
+            <div class="left_1">
+				<a href="#"><img src="../images/xitongguanli.svg">
+				<p>系统设置</p></a>
+			</div>
+		</div>
+		<div class="content_right">
+            <h1>历史数据</h1>
+            搜索： <input type="text" class="search" value="">
+			<table class="show_report">
+                <tr>
+                    <!-- th为表格标题栏-->
+                    <th colspan="5" style="width: 700px;">被检设备信息</th>
+                    <th colspan="5" >检测实验信息</th>
+                    <th colspan="2">检测结果信息</th>
+                </tr>
+                <tr>
+                    <!-- 被检设备信息 -->
+                    <th>产品编号</th>
+                    <th>制造商</th>
+                    <th>产品名称</th>
+                    <th>生产日期</th>
+                    <th>送检日期</th>
+                    <!-- 检测实验信息 -->
+                    <th>项目</th>
+                    <th>挡位</th>
+                    <th>百分比</th>
+                    <th>数据上限</th>
+                    <th>数据下限</th>
+                    <!-- 检测结果信息 -->
+                    <th>是否合格</th>
+                    <th>其他结果</th>
+
+                </tr>
+                <tr>
+                    <td>A00001</td>
+                    <td>A制造商</td>
+                    <td>二次压降检测仪</td>
+                    <td>2022-1-1</td>
+                    <td>2022-1-15</td>
+
+                    <td>PT1</td>
+                    <td>100V</td>
+                    <td>20%</td>
+                    <td>19.6%</td>
+                    <td>20.4%</td>
+
+                    <td>合格</td>
+                    <td>其他</td>
+                </tr>
+                <tr>
+                    <td>A00002</td>
+                    <td>A制造商</td>
+                    <td>二次压降检测仪</td>
+                    <td>2022-6-9</td>
+                    <td>2022-6-24</td>
+
+                    <td>PT2</td>
+                    <td>100V</td>
+                    <td>100%</td>
+                    <td>98.0%</td>
+                    <td>102.0%</td>
+
+                    <td>合格</td>
+                    <td>其他</td>
+                </tr>
+                <tr>
+                    <td>B00001</td>
+                    <td>B制造商</td>
+                    <td>二次压降检测仪</td>
+                    <td>2022-3-1</td>
+                    <td>2022-4-5</td>
+
+                    <td>PT2</td>
+                    <td>100V</td>
+                    <td>100%</td>
+                    <td>98.0%</td>
+                    <td>102.0%</td>
+
+                    <td>合格</td>
+                    <td>其他</td>
+                </tr>
+            </table>
+            <div id="pagiDiv" align="right" style="">
+                <1....> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <span id="spanFirst">首页</span>&nbsp;&nbsp;
+                <span id="spanPre">上一页</span>&nbsp;&nbsp;
+                <span id="spanNext">下一页</span>&nbsp;&nbsp;
+                <span id="spanLast">最后一页</span>&nbsp;&nbsp;
+                <!-- The&nbsp;<span id="spanPageNum"></span>&nbsp;Page/Total&nbsp;<span id="spanTotalPage"></span>&nbsp;Page -->
+            </div>
+		</div>
+	</body>
+</html>
+<style type="text/css">
+.content_right h1{
+    text-align: center;
+}
+.show_report {
+	background: #ccc;
+	margin: 10px auto;
+	border-collapse: collapse;
+	/*border-collapse:collapse合并内外边距
+	(去除表格单元格默认的2个像素内外边距*/ 
+}               
+.show_report th,td {
+	height: 50px;
+	line-height: 25px;
+	text-align: center;
+	border: 1px solid #ccc;
+}       
+
+.show_report th {
+	background: #eee;
+	font-weight: normal;
+	width: 100px;
+	height: 50px;
+}       
+.show_report tr {
+	background: #fff;
+}       
+.show_report tr:hover {
+	background: #cc0;
+}       
+.show_report td a {
+	color: #06f;
+	text-decoration: none;
+}       
+.show_report td a:hover {
+	color: #06f;
+	text-decoration: underline;
+}
+#pagiDiv span{
+        background:#1e90ff;
+        border-radius: .2em;
+        padding:5px;
+    }
+</style>
+<script>
+	function mysubmit()
+    {
+        window.location.href = './print_report.html';
+        window.event.returnValue=false;
+        return false
+    }
+    function logout(){
+        if (window.confirm('是否退出?')) {
+            window.location.href = '../index.html';
+        } else {
+            return false;
+        }
+    }
+</script>

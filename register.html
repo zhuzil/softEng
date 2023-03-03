@@ -1,0 +1,72 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-12-17 14:40:35
+ * @LastEditTime: 2022-12-19 15:05:27
+ * @LastEditors: DESKTOP-2OD8ACM
+ * @Description: In User Settings Edit
+ * @FilePath: \课设\register.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="./css/login.css" />
+    <script src="./js/login.js"></script>
+</head>
+<body>
+<div class="control">
+    <div class="item">
+        <div>登录</div><div class="active">注册</div>
+    </div>
+    <div class="content">
+        <div style="display: block;">
+            <p>用户名</p>
+            <input type="text" placeholder="username" />
+            <p>密码</p>
+            <input type="password" placeholder="password"/>
+            <p>邮箱</p>
+            <input type="text" placeholder="email" />
+            <br/>
+            <input type="submit" onclick ="RigsterSubmitClick()" id="rigsterbtn"value="注册"/>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    window.onload = function (){
+        var item = document.getElementsByClassName("item");
+        var it = item[0].getElementsByTagName("div");
+     
+        var content = document.getElementsByClassName("content");
+        var con = content[0].getElementsByTagName("div");
+     
+        for (let i=0;i<it.length;i++){
+            it[i].onclick = function(){
+                switch (i){
+                    case 0:
+                        // alert("login")
+                        window.location.href='login.html';
+                        break;
+                    case 1:
+                        // alert("register")
+                        window.location.href='register.html';
+                        break;
+                    default:
+                        break;
+                }
+     
+            }
+        }
+    }
+    
+    function LoginSubmitClick() {
+        alert("登录成功！");
+        window.location.href='admin.html';
+    }
+    function RigsterSubmitClick() {
+        alert("注册成功！");
+        window.location.href='admin.html';
+    }
+    </script>
